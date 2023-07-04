@@ -1,8 +1,8 @@
-import React, { Children, cloneElement, isValidElement } from 'react';
-import { HTMLFieldProps, connectField, filterDOMProps } from 'uniforms';
+import React, { Children, cloneElement, isValidElement } from "react";
+import { HTMLFieldProps, connectField, filterDOMProps } from "uniforms";
 
-import ListAddField from './ListAddField';
-import ListItemField from './ListItemField';
+import ListAddField from "./ListAddField";
+import ListItemField from "./ListItemField";
 
 export type ListFieldProps = HTMLFieldProps<
   unknown[],
@@ -31,11 +31,11 @@ function List({
           isValidElement(child)
             ? cloneElement(child, {
                 key: `${itemIndex}-${childIndex}`,
-                name: child.props.name?.replace('$', '' + itemIndex),
+                // name: child.props.name?.replace("$", "" + itemIndex) as string,
                 ...itemProps,
               })
-            : child,
-        ),
+            : child
+        )
       )}
     </ul>
   );
