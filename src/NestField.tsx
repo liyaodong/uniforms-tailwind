@@ -6,7 +6,7 @@ import AutoField from "./AutoField";
 export type NestFieldProps = HTMLFieldProps<
   object,
   HTMLDivElement,
-  { itemProps?: object; description?: string }
+  { itemProps?: object; description?: string; name?: string }
 >;
 
 function Nest({
@@ -18,7 +18,7 @@ function Nest({
   ...props
 }: NestFieldProps) {
   return (
-    <div {...filterDOMProps(props)}>
+    <div data-name={props.name} {...filterDOMProps(props)}>
       {label && <label>{label}</label>}
       {!!description && (
         <p className="mt-1 text-sm leading-6 text-gray-600">{description}</p>
