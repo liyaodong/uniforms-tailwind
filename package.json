@@ -9,6 +9,20 @@
   "repository": "https://github.com/liyaodong/uniforms-tailwind",
   "bugs": "https://github.com/liyaodong/uniforms-tailwind/issues",
   "funding": "https://github.com/vazco/uniforms?sponsor=1",
+  "scripts": {
+    "build": "tsc --build --incremental tsconfig.build.json",
+    "clean": "tsc --build --clean tsconfig.build.json && rimraf coverage",
+    "coverage": "jest --coverage",
+    "lint": "npm run lint:code && npm run lint:text && npm run lint:types",
+    "lint:code": "eslint --cache --cache-location node_modules/.cache/eslint --cache-strategy content --ext js,ts,tsx .",
+    "lint:text": "prettier --check \"**/*.{json,md,mdx,yml}\"",
+    "lint:types": "npm run build",
+    "prereset": "npm run clean",
+    "pretest": "npm run lint",
+    "publish": "npm run clean && npm run build && lerna publish",
+    "reset": "rimraf node_modules packages/*/node_modules reproductions/.cache reproductions/dist reproductions/node_modules website/.docusaurus website/build website/node_modules",
+    "test": "jest"
+  },
   "keywords": [
     "form",
     "forms",
@@ -31,9 +45,18 @@
     "react": "^18.0.0 || ^17.0.0 || ^16.8.0"
   },
   "dependencies": {
-    "invariant": "^2.0.0",
+    "invariant": "^2.2.4",
     "lodash": "^4.0.0",
     "tslib": "^2.2.0",
     "uniforms": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "@types/invariant": "^2.2.35",
+    "@types/lodash": "^4.14.195",
+    "@types/node": "^20.3.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react": "^18.2.0",
+    "typescript": "^5.1.6"
   }
 }

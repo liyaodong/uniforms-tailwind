@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "packages",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "strict": true,
+    "target": "ES6"
+  }
+}
