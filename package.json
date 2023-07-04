@@ -1,13 +1,13 @@
 {
-  "name": "uniforms-unstyled",
+  "name": "uniforms-tailwind",
   "version": "4.0.0-alpha.5",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "sideEffects": false,
-  "description": "Unstyled components for uniforms.",
-  "repository": "https://github.com/vazco/uniforms/tree/master/packages/uniforms-unstyled",
-  "bugs": "https://github.com/vazco/uniforms/issues",
+  "description": "Tailwind components for uniforms.",
+  "repository": "https://github.com/liyaodong/uniforms-tailwind",
+  "bugs": "https://github.com/liyaodong/uniforms-tailwind/issues",
   "funding": "https://github.com/vazco/uniforms?sponsor=1",
   "keywords": [
     "form",
@@ -16,7 +16,8 @@
     "react",
     "react-component",
     "schema",
-    "validation"
+    "validation",
+    "tailwind"
   ],
   "files": [
     "cjs/*.d.ts",
