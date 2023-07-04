@@ -1,6 +1,6 @@
 {
   "name": "uniforms-tailwind-theme",
-  "version": "4.0.0-alpha.5.4",
+  "version": "4.0.0-alpha.5.5",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -19,7 +19,7 @@
     "lint:types": "npm run build",
     "prereset": "npm run clean",
     "pretest": "npm run lint",
-    "publish": "npm run build",
+    "deploy": "npm run build && npm publish",
     "reset": "rimraf node_modules packages/*/node_modules reproductions/.cache reproductions/dist reproductions/node_modules website/.docusaurus website/build website/node_modules",
     "test": "jest"
   },
