@@ -4,7 +4,7 @@ import { HTMLFieldProps, connectField, filterDOMProps } from "uniforms";
 export type TextFieldProps = HTMLFieldProps<
   string,
   HTMLDivElement,
-  { inputRef?: Ref<HTMLInputElement> }
+  { inputRef?: Ref<HTMLInputElement>; description?: string }
 >;
 
 function Text({
@@ -19,6 +19,7 @@ function Text({
   readOnly,
   type,
   value,
+  description,
   ...props
 }: TextFieldProps) {
   return (
@@ -30,6 +31,9 @@ function Text({
         >
           {label}
         </label>
+      )}
+      {!!description && (
+        <p className="mt-1 text-sm leading-6 text-gray-600">{description}</p>
       )}
 
       <input

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   HTMLFieldProps,
   connectField,
   filterDOMProps,
   joinName,
   useField,
-} from 'uniforms';
+} from "uniforms";
 
 export type ListDelFieldProps = HTMLFieldProps<unknown, HTMLSpanElement>;
 
@@ -16,16 +16,16 @@ function ListDel({ disabled, name, readOnly, ...props }: ListDelFieldProps) {
   const parent = useField<{ minCount?: number }, unknown[]>(
     parentName,
     {},
-    { absoluteName: true },
+    { absoluteName: true }
   )[0];
 
   disabled ||= readOnly || parent.minCount! >= parent.value!.length;
   function onAction(
     event:
       | React.KeyboardEvent<HTMLSpanElement>
-      | React.MouseEvent<HTMLSpanElement, MouseEvent>,
+      | React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) {
-    if (!disabled && (!('key' in event) || event.key === 'Enter')) {
+    if (!disabled && (!("key" in event) || event.key === "Enter")) {
       const value = parent.value!.slice();
       value.splice(nameIndex, 1);
       parent.onChange(value);
@@ -34,6 +34,7 @@ function ListDel({ disabled, name, readOnly, ...props }: ListDelFieldProps) {
 
   return (
     <span
+      className="block w-full text-center rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-2xl sm:leading-6"
       {...filterDOMProps(props)}
       onClick={onAction}
       onKeyDown={onAction}
@@ -47,5 +48,5 @@ function ListDel({ disabled, name, readOnly, ...props }: ListDelFieldProps) {
 
 export default connectField<ListDelFieldProps>(ListDel, {
   initialValue: false,
-  kind: 'leaf',
+  kind: "leaf",
 });

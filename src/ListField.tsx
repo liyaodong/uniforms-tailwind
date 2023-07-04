@@ -7,7 +7,7 @@ import ListItemField from "./ListItemField";
 export type ListFieldProps = HTMLFieldProps<
   unknown[],
   HTMLUListElement,
-  { itemProps?: object }
+  { itemProps?: object; description?: string }
 >;
 
 function List({
@@ -15,6 +15,7 @@ function List({
   itemProps,
   label,
   value,
+  description,
   ...props
 }: ListFieldProps) {
   return (
@@ -22,6 +23,11 @@ function List({
       {label && (
         <label>
           {label}
+          {!!description && (
+            <span className="mt-1 text-sm leading-6 text-gray-600">
+              {description}
+            </span>
+          )}
           <ListAddField name="$" />
         </label>
       )}
