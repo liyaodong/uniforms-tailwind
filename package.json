@@ -1,6 +1,6 @@
 {
   "name": "uniforms-tailwind-theme",
-  "version": "4.0.0-alpha.5.3",
+  "version": "4.0.0-alpha.5.4",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
@@ -54,9 +54,9 @@
     "@types/invariant": "^2.2.35",
     "@types/lodash": "^4.14.195",
     "@types/node": "^20.3.3",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "react": "^18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "react": "18.2.0",
     "typescript": "^5.1.6"
   }
 }
