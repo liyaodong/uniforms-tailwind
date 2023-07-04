@@ -1,5 +1,5 @@
 {
-  "name": "uniforms-tailwind",
+  "name": "uniforms-tailwind-theme",
   "version": "4.0.0-alpha.5",
   "license": "MIT",
   "main": "./cjs/index.js",

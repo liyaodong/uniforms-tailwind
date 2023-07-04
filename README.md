@@ -1,11 +1,11 @@
-# uniforms-tailwind
+# uniforms-tailwind-theme
 
 > Tailwind components for `uniforms`.
 
 ## Install
 
 ```sh
-$ npm install uniforms-tailwind
+$ npm install uniforms-tailwind-theme
 ```
 
 For more in depth documentation see [uniforms.tools](https://uniforms.tools).
