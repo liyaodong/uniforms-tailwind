@@ -1,6 +1,6 @@
 {
   "name": "uniforms-tailwind-theme",
-  "version": "4.0.0-alpha.5.5",
+  "version": "4.0.0-alpha.5.6",
   "license": "MIT",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",

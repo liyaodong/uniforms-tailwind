@@ -1,12 +1,12 @@
-import cloneDeep from 'lodash/cloneDeep';
-import React from 'react';
+import cloneDeep from "lodash/cloneDeep";
+import React from "react";
 import {
   HTMLFieldProps,
   connectField,
   filterDOMProps,
   joinName,
   useField,
-} from 'uniforms';
+} from "uniforms";
 
 export type ListAddFieldProps = HTMLFieldProps<unknown, HTMLSpanElement>;
 
@@ -22,7 +22,7 @@ function ListAdd({
   const parent = useField<{ maxCount?: number }, unknown[]>(
     parentName,
     {},
-    { absoluteName: true },
+    { absoluteName: true }
   )[0];
 
   const limitNotReached =
@@ -32,7 +32,7 @@ function ListAdd({
     if (
       limitNotReached &&
       !readOnly &&
-      (!('key' in event) || event.key === 'Enter')
+      (!("key" in event) || event.key === "Enter")
     ) {
       parent.onChange(parent.value!.concat([cloneDeep(value)]));
     }
@@ -40,6 +40,7 @@ function ListAdd({
 
   return (
     <span
+      className=""
       {...filterDOMProps(props)}
       onClick={onAction}
       onKeyDown={onAction}
@@ -53,5 +54,5 @@ function ListAdd({
 
 export default connectField<ListAddFieldProps>(ListAdd, {
   initialValue: false,
-  kind: 'leaf',
+  kind: "leaf",
 });

@@ -1,5 +1,5 @@
-import React, { Ref } from 'react';
-import { HTMLFieldProps, connectField, filterDOMProps } from 'uniforms';
+import React, { Ref } from "react";
+import { HTMLFieldProps, connectField, filterDOMProps } from "uniforms";
 
 export type BoolFieldProps = HTMLFieldProps<
   boolean,
@@ -21,6 +21,7 @@ function Bool({
   return (
     <div {...filterDOMProps(props)}>
       <input
+        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
         checked={value || false}
         disabled={disabled}
         id={id}
@@ -30,9 +31,13 @@ function Bool({
         type="checkbox"
       />
 
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label htmlFor={id} className="font-medium text-gray-900">
+          {label}
+        </label>
+      )}
     </div>
   );
 }
 
-export default connectField<BoolFieldProps>(Bool, { kind: 'leaf' });
+export default connectField<BoolFieldProps>(Bool, { kind: "leaf" });
