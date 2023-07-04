@@ -23,7 +23,7 @@ function Text({
   ...props
 }: TextFieldProps) {
   return (
-    <div {...filterDOMProps(props)}>
+    <div data-name={name} {...filterDOMProps(props)}>
       {label && (
         <label
           className="block text-sm font-medium leading-6 text-gray-900"

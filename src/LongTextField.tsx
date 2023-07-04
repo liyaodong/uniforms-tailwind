@@ -21,7 +21,7 @@ function LongText({
   ...props
 }: LongTextFieldProps) {
   return (
-    <div {...filterDOMProps(props)}>
+    <div data-name={name} {...filterDOMProps(props)}>
       {label && <label htmlFor={id}>{label}</label>}
 
       {!!description && (
